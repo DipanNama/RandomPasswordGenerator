@@ -32,5 +32,5 @@ Like a Combination of two popular website [LastPass](https://www.lastpass.com/) 
  5. Best way to learn Version Control.
 
 #### Environment Setup :
- - Huroko for online
+ - Heroko for online
  - docker for offline
