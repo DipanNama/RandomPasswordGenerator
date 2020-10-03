@@ -34,3 +34,17 @@ Like a Combination of two popular website [LastPass](https://www.lastpass.com/) 
 #### Environment Setup :
  - Huroko for online
  - docker for offline
+
+## Run project
+### Install dependencies
+```bash
+npm install
+# or
+yarn
+```
+### Run
+```bash
+npm run dev
+# or
+yarn dev
+```
