@@ -1,10 +1,10 @@
 import Layout from '../components/Layout'
 import Generate from '../components/Generate'
 
-function handlerGenerate (length = 10 as Number) {
+function handlerGenerate (length = 10 as number) {
   // Generate
-  console.log(`generate: ${length}`)
-  Generate
+  const password = Generate(length)
+  return password
 }
 
 const Password = (): JSX.Element => {
