@@ -7,7 +7,7 @@ type Props = {
   title?: string
 }
 
-const Layout = ({ children, title = 'This is the default title' }: Props) => (
+const Layout = ({ children, title = '' }: Props) => (
   <div>
     <Head>
       <title>{title}</title>
@@ -25,31 +25,18 @@ const Layout = ({ children, title = 'This is the default title' }: Props) => (
       <link rel="stylesheet" href="/css/normalize.css" />
       <link rel="stylesheet" href="/css/main.css" />
 
-      <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Rokkitt:wght@300&display=swap" rel="stylesheet" />
+      <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto&family=Rokkitt:wght@300&display=swap" rel="stylesheet" />
 
       <meta name="theme-color" content="#fafafa" />
     </Head>
     <header>
-      <nav>
-        <Link href="/">
-          <a>Home</a>
-        </Link>{' '}
-        |{' '}
-        <Link href="/about">
-          <a>About</a>
-        </Link>{' '}
-        |{' '}
-        <Link href="/users">
-          <a>Users List</a>
-        </Link>{' '}
-        | <a href="/api/users">Users API</a>
-      </nav>
+      <img src="/img/logo.svg" alt="Random Password Generator" />
     </header>
     {children}
-    <footer>
-      <hr />
-      <span>I'm here to stay (Footer)</span>
-    </footer>
+
+    <script src="/js/vendor/modernizr-3.11.2.min.js"></script>
+    <script src="/js/plugins.js"></script>
+    <script src="/js/main.js"></script>
   </div>
 )
 

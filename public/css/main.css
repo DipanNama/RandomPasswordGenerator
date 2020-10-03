@@ -17,6 +17,11 @@ html {
   line-height: 1.4;
 }
 
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: #048ABF;
+}
+
 /*
  * Remove text-shadow in selection highlight:
  * https://twitter.com/miketaylr/status/12228805301
@@ -175,8 +180,62 @@ textarea {
    Modify as content requires.
    ========================================================================== */
 
+main.main-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 16px;
+  padding-right: 16px;
+}
+
+header {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  padding-top: 48px;
+  padding-bottom: 48px;
+}
+
+.password-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.password-wrapper .password {
+  color: #333333;
+  font-size: 18px;
+  font-family: 'Rokkitt', serif;
+  text-align: center;
+  padding-top: 18px;
+  padding-bottom: 18px;
+  background-color: #A7C8F2;
+
+  border-radius: 6px;
+}
+
+.btn-generate {
+  color: #F6F6F6;
+  font-size: 24px;
+  font-family: 'Bebas Neue', cursive;
+  text-align: center;
+  padding-top: 18px;
+  padding-bottom: 18px;
+  margin-top: 14px;
+  border: none;
+  background-color: #F25116;
+  box-shadow: 0 4px 0 #73260A;
+  border-radius: 6px;
+}
+.btn-generate:hover,
+.btn-generate:focus {
+  margin-top: 16px;
+  box-shadow: 0 2px 0 #73260A;
+}
+
 @media only screen and (min-width: 35em) {
   /* Style adjustments for viewports that meet the condition */
+  
 }
 
 @media print,

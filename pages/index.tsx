@@ -1,14 +1,15 @@
-import Link from 'next/link'
 import Layout from '../components/Layout'
 
 const IndexPage = () => (
   <Layout title="Random Password Generator">
-    <h1>Hello Next.js 👋</h1>
-    <p>
-      <Link href="/about">
-        <a>About</a>
-      </Link>
-    </p>
+    <main className="main-content">
+      <div className="password-wrapper">
+        <span className="password">
+          YF/d'2%XW*zT=5V"
+        </span>
+        <button className="btn-generate">GENERATE PASSWORD</button>
+      </div>
+    </main>
   </Layout>
 )
 
