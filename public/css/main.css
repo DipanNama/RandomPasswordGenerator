@@ -235,6 +235,14 @@ header {
   box-shadow: 0 2px 0 #73260A;
 }
 
+.option-wrapper {
+  padding-top: 16px;
+  padding-bottom: 4px;
+}
+.option-password input {
+  margin-right: 3px;
+}
+
 @media only screen and (min-width: 35em) {
   /* Style adjustments for viewports that meet the condition */
   
