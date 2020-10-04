@@ -243,6 +243,11 @@ header {
   margin-right: 3px;
 }
 
+.option-password #password-length {
+  border-radius: 6px;
+  margin-left: 10px;
+}
+
 @media only screen and (min-width: 35em) {
   /* Style adjustments for viewports that meet the condition */
   
