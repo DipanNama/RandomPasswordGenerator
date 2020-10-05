@@ -224,6 +224,7 @@ header {
   font-size: 24px;
   font-family: 'Bebas Neue', cursive;
   text-align: center;
+  position: relative;
   padding-top: 18px;
   padding-bottom: 18px;
   margin-top: 14px;
@@ -234,8 +235,28 @@ header {
 }
 .btn-generate:hover,
 .btn-generate:focus {
-  margin-top: 16px;
+  bottom: -2px;
   box-shadow: 0 2px 0 #73260A;
+}
+
+.btn-copy {
+  color: #F6F6F6;
+  font-size: 24px;
+  font-family: 'Bebas Neue', cursive;
+  text-align: center;
+  position: relative;
+  padding-top: 18px;
+  padding-bottom: 18px;
+  margin-top: 14px;
+  border: none;
+  background-color: #027368;
+  box-shadow: 0 4px 0 #025951;
+  border-radius: 6px;
+}
+.btn-copy:hover,
+.btn-copy:focus {
+  bottom: -2px;
+  box-shadow: 0 2px 0 #025951;
 }
 
 .option-wrapper {

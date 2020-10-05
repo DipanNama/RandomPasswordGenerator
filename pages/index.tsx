@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import Layout from '../components/Layout';
 import Generate from '../components/Generate';
+import Copy2Clipboard from '../components/Copy2Clipboard';
 
 function IndexPage () {
   // The password
-  const [pass, setPass] = useState<String>('');
+  const [pass, setPass] = useState<string>('');
   // The options
   const [option, setOption] = useState<number>(8);
 
@@ -43,6 +44,7 @@ function IndexPage () {
             <Password />
           </span>
           <button onClick={() => handlerGenerate(option)} className="btn-generate">GENERATE PASSWORD</button>
+          <button onClick={() => Copy2Clipboard(pass)} className="btn-copy">COPY</button>
           <div className="option-wrapper">
             <form action="">
               <div className="option-password">
