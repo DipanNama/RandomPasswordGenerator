@@ -184,10 +184,9 @@ main.main-content {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
   margin-left: 16px;
   margin-right: 16px;
-  padding-left: 16px;
-  padding-right: 16px;
 }
 
 header {
@@ -202,6 +201,10 @@ header {
 .password-wrapper {
   display: flex;
   flex-direction: column;
+  width: 100%;
+  max-width: 320px;
+  padding-left: 16px;
+  padding-right: 16px;
 }
 
 .password-wrapper .password {
