@@ -184,10 +184,9 @@ main.main-content {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
   margin-left: 16px;
   margin-right: 16px;
-  padding-left: 16px;
-  padding-right: 16px;
 }
 
 header {
@@ -202,6 +201,10 @@ header {
 .password-wrapper {
   display: flex;
   flex-direction: column;
+  width: 100%;
+  max-width: 320px;
+  padding-left: 16px;
+  padding-right: 16px;
 }
 
 .password-wrapper .password {
@@ -216,11 +219,19 @@ header {
   border-radius: 6px;
 }
 
+.buttons-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 .btn-generate {
   color: #F6F6F6;
   font-size: 24px;
   font-family: 'Bebas Neue', cursive;
   text-align: center;
+  position: relative;
   padding-top: 18px;
   padding-bottom: 18px;
   margin-top: 14px;
@@ -228,14 +239,37 @@ header {
   background-color: #F25116;
   box-shadow: 0 4px 0 #73260A;
   border-radius: 6px;
+  width: 100%;
 }
 .btn-generate:hover,
 .btn-generate:focus {
-  margin-top: 16px;
+  bottom: -2px;
   box-shadow: 0 2px 0 #73260A;
 }
 
+.btn-copy {
+  color: #F6F6F6;
+  font-size: 24px;
+  font-family: 'Bebas Neue', cursive;
+  text-align: center;
+  position: relative;
+  padding-top: 18px;
+  padding-bottom: 18px;
+  margin-top: 14px;
+  border: none;
+  background-color: #027368;
+  box-shadow: 0 4px 0 #025951;
+  border-radius: 6px;
+  width: 100%;
+}
+.btn-copy:hover,
+.btn-copy:focus {
+  bottom: -2px;
+  box-shadow: 0 2px 0 #025951;
+}
+
 .option-wrapper {
+  color: #F6F6F6;
   padding-top: 16px;
   padding-bottom: 4px;
 }
@@ -250,7 +284,19 @@ header {
 
 @media only screen and (min-width: 35em) {
   /* Style adjustments for viewports that meet the condition */
-  
+  .buttons-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+  .btn-generate {
+    width: 66%;
+    margin-right: 12px;
+  }
+  .btn-copy {
+    width: 30%;
+  }
 }
 
 @media print,
