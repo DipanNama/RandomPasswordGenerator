@@ -219,6 +219,13 @@ header {
   border-radius: 6px;
 }
 
+.buttons-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 .btn-generate {
   color: #F6F6F6;
   font-size: 24px;
@@ -232,6 +239,7 @@ header {
   background-color: #F25116;
   box-shadow: 0 4px 0 #73260A;
   border-radius: 6px;
+  width: 100%;
 }
 .btn-generate:hover,
 .btn-generate:focus {
@@ -252,6 +260,7 @@ header {
   background-color: #027368;
   box-shadow: 0 4px 0 #025951;
   border-radius: 6px;
+  width: 100%;
 }
 .btn-copy:hover,
 .btn-copy:focus {
@@ -260,6 +269,7 @@ header {
 }
 
 .option-wrapper {
+  color: #F6F6F6;
   padding-top: 16px;
   padding-bottom: 4px;
 }
@@ -274,7 +284,19 @@ header {
 
 @media only screen and (min-width: 35em) {
   /* Style adjustments for viewports that meet the condition */
-  
+  .buttons-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+  .btn-generate {
+    width: 66%;
+    margin-right: 12px;
+  }
+  .btn-copy {
+    width: 30%;
+  }
 }
 
 @media print,
