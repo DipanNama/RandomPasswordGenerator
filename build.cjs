@@ -1,0 +1,1 @@
+const fs=require('node:fs');fs.rmSync('dist',{recursive:true,force:true});fs.cpSync('site','dist',{recursive:true});fs.writeFileSync('dist/.nojekyll','');console.log('Built standalone static site. No legacy Next.js runtime or packages required.');
