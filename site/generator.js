@@ -1,0 +1,7 @@
+(function(root){
+const SETS={lower:'abcdefghijklmnopqrstuvwxyz',upper:'ABCDEFGHIJKLMNOPQRSTUVWXYZ',digits:'0123456789',symbols:'!@#$%^&*()-_=+[]{}:,.?'};
+function groups(options){return Object.keys(SETS).filter(k=>options[k]).map(k=>options.exclude?SETS[k].replace(/[Il1O0o]/g,''):SETS[k]);}
+function randomIndex(size,cryptoObject=globalThis.crypto){if(!Number.isInteger(size)||size<1||size>256)throw Error('Invalid alphabet');if(!cryptoObject?.getRandomValues)throw Error('Secure randomness is unavailable. Use a current browser.');const limit=256-256%size,byte=new Uint8Array(1);for(let tries=0;tries<10000;tries++){cryptoObject.getRandomValues(byte);if(byte[0]<limit)return byte[0]%size;}throw Error('Random source failed.');}
+function generate(length,options,cryptoObject=globalThis.crypto){if(!Number.isInteger(length)||length<8||length>64)throw Error('Choose a length from 8 to 64.');const selected=groups(options);if(!selected.length)throw Error('Select at least one character group.');const alphabet=selected.join('');for(let attempts=0;attempts<10000;attempts++){let result='';for(let i=0;i<length;i++)result+=alphabet[randomIndex(alphabet.length,cryptoObject)];if(selected.every(set=>[...result].some(c=>set.includes(c))))return result;}throw Error('Generation failed. Please try again.');}
+const API={SETS,groups,randomIndex,generate};if(typeof module!=='undefined')module.exports=API;else root.PasswordGenerator=API;
+})(globalThis);
