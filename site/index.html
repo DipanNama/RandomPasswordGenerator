@@ -1,0 +1,59 @@
+<!doctype html><html lang="en" class="dark"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Generate random passwords locally with browser Web Crypto. No account, uploads or password storage."><meta name="referrer" content="no-referrer"><title>Random Password Generator</title><style>
+:root{color-scheme:light;--bg:#f7f7f8;--panel:#fff;--text:#18181b;--muted:#71717a;--border:#dddde2;--chip:#eeeef0}.dark{color-scheme:dark;--bg:#101012;--panel:#18181b;--text:#fafafa;--muted:#a1a1aa;--border:#303035;--chip:#242428}*{box-sizing:border-box}body{margin:0;font-family:Arial,Helvetica,sans-serif;background:var(--bg);color:var(--text)}main{max-width:1080px;margin:auto;padding:30px 36px}header{display:flex;justify-content:space-between;align-items:center}.brand{font-size:12px;letter-spacing:2px;font-weight:700}.brand small{font-size:10px;color:var(--muted);margin-left:14px;font-weight:400}button{display:inline-flex;align-items:center;justify-content:center;gap:8px;white-space:nowrap;border-radius:999px;font:inherit;font-size:13px;font-weight:500;transition:background .2s;border:1px solid var(--border);background:var(--panel);color:var(--text);padding:11px 18px;cursor:pointer}button:hover{background:var(--chip)}button:disabled{opacity:.45;cursor:not-allowed}button:focus-visible,input:focus-visible{outline:2px solid var(--muted);outline-offset:4px}.icon{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}.intro{text-align:center;padding:48px 0 25px}.badge{display:inline-flex;gap:8px;align-items:center;border:1px solid var(--border);border-radius:999px;padding:8px 13px;font-size:10px;color:var(--muted)}h1{font-size:clamp(32px,4.5vw,52px);letter-spacing:-2px;margin:20px 0 13px;line-height:1.08}.intro p{font-size:14px;line-height:1.7;color:var(--muted);margin:0}.frame{border:1px solid var(--border);border-radius:24px;padding:7px;background:var(--panel)}.inside{border:1px solid var(--border);border-radius:18px;overflow:hidden}.topbar{padding:14px 23px;display:flex;justify-content:space-between;font-size:10px;color:var(--muted);letter-spacing:1px;background:var(--chip)}.workspace{display:grid;grid-template-columns:1.35fr 1fr}.result{padding:36px 28px;display:flex;flex-direction:column;justify-content:center;gap:19px;border-right:1px solid var(--border)}.label{font-size:10px;letter-spacing:1.5px;color:var(--muted)}#password{width:100%;height:105px;padding:18px;border:1px solid var(--border);border-radius:13px;color:var(--text);background:var(--bg);font:22px/1.6 monospace;word-break:break-all;overflow-wrap:anywhere;resize:none}.actions{display:flex;gap:10px;flex-wrap:wrap}.primary{background:var(--text);color:var(--bg);border-color:var(--text)}.primary:hover{opacity:.88;background:var(--text)}.arrow{display:grid;place-items:center;background:var(--bg);color:var(--text);border-radius:999px;width:24px;height:24px;margin-left:5px}.result p{font-size:12px;color:var(--muted);line-height:1.7;margin:0}.options{padding:28px}.length-label{display:flex;justify-content:space-between;align-items:center;font-size:13px}.length-label input{border:1px solid var(--border);border-radius:9px;background:var(--bg);color:var(--text);padding:8px;width:65px;font:inherit}input[type=range]{width:100%;margin:18px 0;accent-color:var(--text)}.bounds{display:flex;justify-content:space-between;color:var(--muted);font-size:10px;margin-top:-8px;margin-bottom:22px}.checks{display:grid;grid-template-columns:1fr 1fr;gap:15px 10px}.checks label,.exclude{display:flex;align-items:center;gap:8px;font-size:12px;line-height:1.5}.checks small{color:var(--muted);font-size:10px;display:block}.checks input,.exclude input{accent-color:var(--text);width:17px;height:17px}.exclude{margin-top:22px;padding-top:19px;border-top:1px solid var(--border)}.status{min-height:46px;border-top:1px solid var(--border);padding:14px 23px;font-size:12px;color:var(--muted)}.notes{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;padding:28px 7px}.notes strong{font-size:12px;font-weight:500}.notes p{font-size:12px;line-height:1.7;color:var(--muted);margin:8px 0}.divider{height:15px;border-block:1px solid var(--border);padding:3px;background:repeating-linear-gradient(135deg,transparent 0 5px,var(--border) 5px 6px);background-clip:content-box}footer{font-size:11px;color:var(--muted);display:flex;justify-content:space-between;padding:18px 0}a{color:inherit;text-underline-offset:4px}@media(max-width:700px){main{padding:22px 18px}.brand small{display:none}.intro{padding:35px 0 25px}.workspace{grid-template-columns:1fr}.result{padding:25px 18px;border-right:0;border-bottom:1px solid var(--border)}.options{padding:24px 18px}.notes{grid-template-columns:1fr;gap:4px}.notes p{margin:5px 0 15px}.topbar{padding:14px 18px;font-size:9px}.actions button{flex:1}.actions .primary{flex-basis:100%}.status{padding:14px 18px}footer{gap:20px;line-height:1.6}h1{letter-spacing:-1.3px}}
+</style></head><body><main><header><div class="brand">RANDOM PASSWORD <small>BY DIPAN NAMA</small></div><button id="theme" aria-label="Switch color theme"><!-- @license lucide-static v1.52.0 - ISC -->
+<svg
+  class="icon"
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M20.985 12.486a9 9 0 1 1-9.473-9.472c.405-.022.617.46.402.803a6 6 0 0 0 8.268 8.268c.344-.215.825-.004.803.401" />
+</svg>
+</button></header><section class="intro"><span class="badge"><!-- @license lucide-static v1.52.0 - ISC -->
+<svg
+  class="icon"
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <circle cx="12" cy="16" r="1" />
+  <rect x="3" y="10" width="18" height="12" rx="2" />
+  <path d="M7 10V7a5 5 0 0 1 10 0v3" />
+</svg>
+LOCAL GENERATION. NO ACCOUNT NEEDED.</span><h1>A better starting point<br>for your next password.</h1><p>Choose your characters. Generate with browser Web Crypto.<br>Your passwords stay on this page, not on a server.</p></section><section class="frame" aria-label="Password generator"><div class="inside"><div class="topbar"><span>GENERATOR / 01</span><span>ON-DEVICE ONLY</span></div><div class="workspace"><div class="result"><label for="password" class="label">YOUR NEW PASSWORD</label><textarea id="password" readonly spellcheck="false" autocomplete="off" aria-label="Generated password"></textarea><div class="actions"><button class="primary" id="generate">Generate password <span class="arrow"><!-- @license lucide-static v1.52.0 - ISC -->
+<svg
+  class="icon"
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M7 7h10v10" />
+  <path d="M7 17 17 7" />
+</svg>
+</span></button><button id="copy">Copy</button><button id="reveal">Reveal</button><button id="clear">Clear</button></div><p>Use a unique password for every account. Save it in a trusted password manager, not a screenshot.</p></div><div class="options"><label class="length-label" for="length">Password length <input type="number" id="length" min="8" max="64" value="20"></label><input type="range" min="8" max="64" value="20" id="slider" aria-label="Password length slider"><div class="bounds"><span>8 characters</span><span>64 characters</span></div><div class="checks"><label><input type="checkbox" id="lower" checked><span>Lowercase<small>a-z</small></span></label><label><input type="checkbox" id="upper" checked><span>Uppercase<small>A-Z</small></span></label><label><input type="checkbox" id="digits" checked><span>Numbers<small>0-9</small></span></label><label><input type="checkbox" id="symbols" checked><span>Symbols<small>!@#$...</small></span></label></div><label class="exclude"><input type="checkbox" id="exclude">Avoid lookalikes (I, l, 1, O, 0, o)</label></div></div><div id="status" class="status" role="status" aria-live="polite">Ready. Generate a password when you need one.</div></div></section><section class="notes"><div><strong>Random, not predictable</strong><p>Web Crypto provides the randomness. Unbiased sampling and group checks keep your selected settings.</p></div><div><strong>No password history</strong><p>No uploads, analytics or password storage. Only your color-theme preference is saved in this browser.</p></div><div><strong>A generator, not a vault</strong><p>Copied passwords enter your system clipboard. Clear it when done, and enable MFA on your accounts.</p></div></section><div class="divider"></div><footer><span>Built by Dipan Nama. Free to use.</span><a href="https://github.com/DipanNama/RandomPasswordGenerator" target="_blank" rel="noopener noreferrer">View source</a></footer></main><script src="generator.js"></script><script>
+const $=id=>document.getElementById(id);let password='',revealed=false;
+try{if(localStorage.getItem('password.theme')==='light')document.documentElement.classList.remove('dark');}catch{}
+$('theme').onclick=()=>{document.documentElement.classList.toggle('dark');try{localStorage.setItem('password.theme',document.documentElement.classList.contains('dark')?'dark':'light');}catch{}};
+function display(){ $('password').value=password?(revealed?password:'•'.repeat(password.length)):'';$('copy').disabled=!password;$('reveal').disabled=!password;$('reveal').textContent=revealed?'Hide':'Reveal';}
+$('generate').onclick=()=>{try{password=PasswordGenerator.generate(Number($('length').value),Object.fromEntries(['lower','upper','digits','symbols','exclude'].map(k=>[k,$(k).checked])));revealed=false;display();$('status').textContent=`Generated ${password.length} characters locally. Reveal only when you're ready.`;}catch(e){password='';display();$('status').textContent=e.message;}};
+$('copy').onclick=async()=>{try{await navigator.clipboard.writeText(password);$('status').textContent='Copied to your clipboard. Clear your clipboard after use.';}catch{$('status').textContent='Clipboard access was denied. Reveal and select the password to copy manually.';}};
+$('reveal').onclick=()=>{revealed=!revealed;display();};$('clear').onclick=()=>{password='';revealed=false;display();$('status').textContent='Cleared from this page. Your system clipboard is unchanged.';};$('slider').oninput=()=>{$('length').value=$('slider').value;};$('length').oninput=()=>{$('slider').value=$('length').value;};addEventListener('pagehide',()=>{password='';display();});display();
+</script></body></html>
